@@ -47,3 +47,23 @@ prefer to use let and const only
 // console.log(count++); //12
 // console.log(count);
 // console.log(typeof True);
+
+// console.log(null>0);
+// console.log(null>=0);
+// console.log(null<=0);
+// console.log(null==0); 
+/* comparison check converts null as number as 0*/
+// console.log("2"==2);
+// console.log("2"===2);
+ 
+// const greet= function(){
+//     console.log("good Morning");
+// }
+// const MyObj= {
+//     name:"Harshit",
+//     age:20,
+//     cgpa:9.8
+// }
+// const MyList=["Lucknow", "Delhi"];
+
+// console.table([MyObj,MyList]);

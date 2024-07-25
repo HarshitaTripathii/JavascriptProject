@@ -1,3 +1,5 @@
+// DISCLAIMER: Select the desired code to be run and then click on "ctrl+/" to remove the comments  
+
 // console.log("hello Harshita");
 // const accountId=110980;
 // let accMail="harshitat216@gmail.com";

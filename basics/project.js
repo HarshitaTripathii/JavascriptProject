@@ -59,6 +59,11 @@ prefer to use let and const only
 // const greet= function(){
 //     console.log("good Morning");
 // }
+// console.log(typeof greet);
+// console.log(greet);
+// greet();
+
+
 // const MyObj= {
 //     name:"Harshit",
 //     age:20,
@@ -67,3 +72,25 @@ prefer to use let and const only
 // const MyList=["Lucknow", "Delhi"];
 
 // console.table([MyObj,MyList]);
+/* stack(primitive- str, numb, bool..) and   heap(non-primitive- obj, array, func))*/
+
+
+// stack
+
+// let userName1= "harshita";
+// let userName2="Yashi";
+// userName1=userName2;
+// userName1="Harshit";
+// console.log(userName1);
+// console.log(userName2);
+
+// heap
+
+// let name1={name:"Harshita", 
+//     age:20,
+// };
+// let name2=name1;
+// name2.age=21;
+// console.log(name1.age);
+// console.log(name2.age);
+

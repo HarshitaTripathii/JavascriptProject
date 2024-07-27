@@ -1,13 +1,50 @@
-let name1="harshita";
-let age=21;
+// let name1="harshita";
+// let age=21;
 // template Literal using placeholder ${}
 // console.log(`My name is ${name1} and i am ${age} years old girl.`); 
-let name2= new String('Harshit');
+// let name2= new String('Harshit');
 // console.log(name2);
 // console.log(name2[3]);
 // console.log(name1[7]);
-console.log(name1.length);
-console.log(name1.toUpperCase());
-console.log(name1.charAt(4));
-console.log(name1.indexOf('s'));
+// console.log(name1.length);
+// console.log(name1.toUpperCase());
+// console.log(name1.charAt(4));
+// console.log(name1.indexOf('s'));
 
+// numbers
+// const num1=100;
+// const num2= new Number(200);
+
+// console.log(num1);
+// console.log(num2);
+// console.log(num2.toString());
+// console.log(num2.toString().length);
+// console.log(num2);
+// console.log(num2.length);
+// console.log(num1.toFixed(1));
+// console.log(num2.toFixed(3));
+
+// const num3=35.628;
+// console.log(num3.toPrecision(1));
+// console.log(num3.toPrecision(2));
+// console.log(num3.toPrecision(3));
+
+// toPrecision return a string 
+
+// console.log(typeof num3);
+// console.log(typeof(num3.toPrecision(1)));
+
+// to convert numb in readable form using commas
+
+// const salary=1294000;
+// const salary1= 12000000;
+// console.log(salary.toLocaleString());
+// console.log(salary.toLocaleString('en-IN'));
+
+    // *********MATHS*********
+
+// console.log(Math.abs(-223));
+// console.log(Math.round(5.3));
+// console.log(Math.round(5.9));
+// console.log(Math.ceil(5.2));  if number is thoda sa bhi jyada then it will take higher value as the name ceil itself suggests
+// console.log(Math.floor(5.9)); if number is thoda sa bhi kam then it will take lower value as the name floor itself suggests

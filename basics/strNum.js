@@ -1,8 +1,10 @@
 // let name1="harshita";
 // let age=21;
 // template Literal using placeholder ${}
-// console.log(`My name is ${name1} and i am ${age} years old girl.`); 
+// console.log(`My name is ${name1} and i am ${age} years old girl.`);
+
 // let name2= new String('Harshit');
+
 // console.log(name2);
 // console.log(name2[3]);
 // console.log(name1[7]);
@@ -13,6 +15,7 @@
 
 // numbers
 // const num1=100;
+
 // const num2= new Number(200);
 
 // console.log(num1);
@@ -48,3 +51,34 @@
 // console.log(Math.round(5.9));
 // console.log(Math.ceil(5.2));  if number is thoda sa bhi jyada then it will take higher value as the name ceil itself suggests
 // console.log(Math.floor(5.9)); if number is thoda sa bhi kam then it will take lower value as the name floor itself suggests
+
+// console.log(Math.random());
+// console.log((Math.random()*10));
+// console.log((Math.random()*10)+1);
+
+// const max=1100;
+// const min=900;
+// console.log((Math.random()*(max-min))+min);
+
+// *******DATES********
+
+
+// const myDate= new Date();
+// console.log(myDate.toString());
+// console.log(myDate.toDateString());
+// console.log(myDate.toISOString());
+// console.log(myDate.toJSON());
+// console.log(myDate.toLocaleDateString());
+// console.log(myDate.toLocaleString());
+// console.log(myDate.toLocaleTimeString());
+
+// const tdate= new Date(2024,9,5);   // 9 IS MONTH, 5 IS DATE, MONTH NUMBER STARTS WITH 0 HERE IN JS
+
+// const sdate= new Date("2024-10-5");   // HERE MONTH STARTS WITH ACTUAL NUMBER which is 1
+
+// console.log(sdate.toDateString());
+// console.log(tdate.toDateString());
+
+// const tdate1= new Date(2024,9,5,14,30);  // 14 because i wanted it to be in PM , If u want it in AM, write 2 inplace of 14
+// console.log(tdate1.toLocaleString());
+

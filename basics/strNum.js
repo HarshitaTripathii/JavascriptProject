@@ -64,6 +64,7 @@
 
 
 // const myDate= new Date();
+// console.log(myDate);
 // console.log(myDate.toString());
 // console.log(myDate.toDateString());
 // console.log(myDate.toISOString());
@@ -82,3 +83,22 @@
 // const tdate1= new Date(2024,9,5,14,30);  // 14 because i wanted it to be in PM , If u want it in AM, write 2 inplace of 14
 // console.log(tdate1.toLocaleString());
 
+// const newDate=new  Date("2024-10-5");
+// // console.log(newDate);
+// const date1= Date.now();
+// console.log(date1);
+// console.log(date1.getTime());   //ERROR
+
+// console.log(newDate.getTime());  //curret time in miliseconds- output
+
+
+// to convert the time in seconds look below
+// console.log(Date.now());
+// console.log(Math.floor(Date.now()/1000));
+
+// const date2= new Date("2024-10-5");
+// console.log(date2);
+// console.log((date2.getMonth()+1));
+// console.log(date2.getDay());
+
+// console.log(date1>(newDate.getTime()));   //  false

@@ -1,5 +1,5 @@
 const arr= [1,2,3,4,5];
-// const arr2 = new Array(9,8,7,6);
+const arr2 = new Array(9,8,7,6);
 // console.log(arr2);
 // const arr1= ["Yashi", 1, true, 2,3];
 // console.log(arr,arr1);
@@ -28,11 +28,13 @@ const arr= [1,2,3,4,5];
 // console.log(arr.indexOf(200));  // returns -1 if element not found
 // console.log(arr.indexOf(2));
 
+//to convert values of array into string
+
 // const newAr= arr.join();
 // console.log(newAr);   NOTE- COMMA IS ALSO A PART OF STRING
 // console.log(newAr[1]);
 
-  //to convert values of array into string
+  
 
 // console.log(`${newAr} - ${typeof newAr}` );   // it is a STRING , so no need of [] brackets
 // console.log(arr);     // arr will show [] brackets
@@ -49,6 +51,46 @@ const arr= [1,2,3,4,5];
 // console.log("USING SLICE : ", n1arr);
 
 // console.log("C ",arr);
+
+// console.log(arr.push(arr2)); //ALTER THE ARRAY TO WHICH IT IS ADDED, RETURN THE LENGTH OF ALTERED ARRAY
+// console.log(arr);
+// console.log(arr2);
+
+// console.log(arr.concat(arr2));   //CONCATENATE WILL NOT CHANGE THE ORIGINAL ARRAYS, IT CREATES A NEW CONCATENATED ARRAY
+// console.log(arr);
+// console.log(arr2);
+
+// const arr3 = new Array(67,89,54,23);
+// const allArr= [...arr,...arr2,...arr3];    this method is widely used over concat, bcoz can add more than 2 arrays
+// console.log(arr);
+// console.log(arr2);
+// console.log(arr3);
+// console.log(allArr);
+
+
+// to open nested array and convert to single array, use flat()
+
+// const comArr= [2,3,4,[5,6,7],7,[89,[43,67],42],56];
+// console.log(comArr);
+// console.log(comArr.flat(Infinity));
+
+
+//to convert anything into array
+// console.log(Array.isArray("harshita"));
+// console.log(Array.from("harshita"));
+
+// const a1=678;
+// const a2=648;
+// const a3=668;
+// console.log(Array.of(a1,a2,a3));
+
+
+
+
+
+
+
+
 
 
 

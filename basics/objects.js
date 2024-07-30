@@ -1,8 +1,12 @@
 //singleton
 
 //Object.create
+
 const mySym=Symbol();
 const mySym1=Symbol();
+const obj3= new Object();
+const num2= new Number();
+// console.log(num2);
 
 const fobj={name:"Harshita",
     "full name": "Harshita Tripathi",
@@ -33,17 +37,55 @@ const fobj={name:"Harshita",
 // CHANGE
 // fobj.email="Harshita@yahoo.com";
 // console.log(fobj);
+
 // Object.freeze(fobj);   // when you want to Lock your object
+
 // fobj.email="Harshita@hotmail.com";
 // console.log(fobj);
 
 //GREETINGS
-fobj.greet=function(){
-    console.log("hello JS user");
-};
-console.log(fobj.greet());
+// fobj.greet=function(){
+//     console.log("hello JS user");
+// };
+// console.log(fobj.greet());
 
-fobj.greet1=function(){
-    console.log(`hello JS user ${this.name}`);  //in order to access object keys
+// fobj.greet1=function(){
+//     console.log(`hello JS user ${this.name}`);  //in order to access object keys
+// };
+// console.log(fobj.greet1());
+
+//method of declaring object
+const obj1 = new Object(); 
+const obj2={}; 
+obj1.id=127895;
+obj1.fname="Rishi";
+obj1.lname="Singh";
+// console.log(obj1);
+
+const detj={
+    managId:"some@yahoo.com",
+    fullname:{
+        username:{
+            firstName:"rushi",
+            lastname:"kale"
+        },
+
+        adminname:
+        {
+            firstName:"vishal",
+            lastname:"pandey"
+        }
+    },
+    location:"Gurgaon"
+
 };
-console.log(fobj.greet1());
+// console.log(detj);
+
+// console.log(detj.fullname);
+// console.log(detj.fullname.adminname);
+// console.log(detj.fullname.adminname.lastname);
+
+//MERGING OBJECTS
+
+const allObj=Object.assign({},detj, fobj );  //syntax: Object.assign(target, source)
+console.log(allObj);

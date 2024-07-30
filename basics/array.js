@@ -61,7 +61,8 @@ const arr2 = new Array(9,8,7,6);
 // console.log(arr2);
 
 // const arr3 = new Array(67,89,54,23);
-// const allArr= [...arr,...arr2,...arr3];    this method is widely used over concat, bcoz can add more than 2 arrays
+// const allArr= [...arr,...arr2,...arr3];    //this method is widely used over concat, bcoz can add more than 2 arrays
+// const allArr= [arr,arr2,arr3];    // ARRAY OF 3 ARRAYS
 // console.log(arr);
 // console.log(arr2);
 // console.log(arr3);

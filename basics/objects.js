@@ -4,7 +4,7 @@
 
 const mySym=Symbol();
 const mySym1=Symbol();
-const obj3= new Object();
+// const obj3= new Object();
 const num2= new Number();
 // console.log(num2);
 
@@ -79,6 +79,9 @@ const detj={
     location:"Gurgaon"
 
 };
+const obj4= { 1:"a", 2:"b",3:"c"};
+
+
 // console.log(detj);
 
 // console.log(detj.fullname);
@@ -87,5 +90,11 @@ const detj={
 
 //MERGING OBJECTS
 
-const allObj=Object.assign({},detj, fobj );  //syntax: Object.assign(target, source)
-console.log(allObj);
+const allObj=Object.assign({},detj, fobj, obj4);  //syntax: Object.assign(target, source)
+// console.log(allObj)   //object of items
+
+const allObj2= {...detj, ...fobj,...obj1};   //same as above but easier method
+console.log(allObj2);
+
+const allObj1= {detj, fobj};
+// console.log(allObj1);   // object of objects

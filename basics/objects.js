@@ -50,9 +50,10 @@ const fobj={name:"Harshita",
 // console.log(fobj.greet());
 
 // fobj.greet1=function(){
-//     console.log(`hello JS user ${this.name}`);  //in order to access object keys
+//     console.log(`hello JS user ${this.name}`);  //in order to access object keys or in order to take reference of same object
 // };
 // console.log(fobj.greet1());
+// console.log(fobj.greet1);
 
 //method of declaring object
 const obj1 = new Object(); 

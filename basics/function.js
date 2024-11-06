@@ -76,29 +76,96 @@ function sum2(n1,n2)
 
 // var can be declared and can be updated
 // it works globally.
-var a=10;
-if(true)
-{
-    var a=20;
-    console.log(a);
-}
-console.log(a);
+// var a=10;
+// if(true)
+// {
+//     var a=20;
+//     console.log(a);
+// }
+// console.log(a);
 
 
 // let cant be redeclared , but can be updated
 // const neither be updated, nor be redeclared
 // they both works within scopes
-let b=10;
-if(true)
-{
-    let b=20;
-    console.log(b);
+// let b=10;
+// if(true)
+// {
+//     let b=20;
+//     console.log(b);
+// }
+// console.log(b);
+
+// below is one of the way to use same object in itself.
+
+// const obj= {
+//     username: "harshita",
+//     age:21,
+//     welcome : function(a){
+//        console.log(`${a} has just logged in , welcome`);
+//     }
+// }
+// obj.welcome(obj.username);
+
+// but below is more better way to use "this" keyword.
+// this represents current context, to use all the variables present in a scope, 
+// where "this" has been applied, we use "this"
+// "this" is basically an object.
+
+const obj= {
+    username: "harshita",
+    age:21,
+    welcome : function(){
+    console.log(`${this.username} has just logged in , welcome`);
+    console.log(this);
+    }
 }
-console.log(b);
+// obj.welcome();
+// obj.username="arya"
+// obj.welcome();
+// console.log(this);     //return empty object
+// console.log(typeof(this));
 
+// "this" is applicable to objects only. if we try to use it in fxn, then also it is a object but it has 
+// some predefined variables, which we can access.
+// and same applies for function as expression
 
+// const variable1= function()
+// {
+//     let name="yashi";
+//     console.log(this.name);
+// }
 
+// function check()
+// {
+//     let name="harshita";
+//     console.log(this.name);  // return "undefined"
+//     console.log(this); // here it will print obj having few keys
 
+// }
+// check();
 
+// ARROW  FUNCTION
+// remove keyword function and appply () => {}  or () => ()
+// if using () : dont write "return"
+// if using {} :  write "return"
+
+// const func1=() =>{
+//     let name="harshita"
+//     console.log(this.name);  // return "undefined" 
+//     console.log(this)  //return empty object
+// }
+// func1();
+
+// implicit return is when we write in 1 line only, same as using () , told above
+// const func2=(n,m) => n+m+1
+// const func3=(n,m) => (n+m+1)
+// console.log(func2(2,4));
+// console.log(func3(2,4));
+// above, func2,func3 are same. using () is equivalent to not using it like this.
+
+// if we want to return objects, then enclode it in ()
+const func4=(a,b)=>({sum:a+b});
+console.log(func4(2,4));
 
 

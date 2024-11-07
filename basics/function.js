@@ -119,7 +119,7 @@ const obj= {
     console.log(`${this.username} has just logged in , welcome`);
     console.log(this);
     }
-}
+};
 // obj.welcome();
 // obj.username="arya"
 // obj.welcome();
@@ -165,7 +165,42 @@ const obj= {
 // above, func2,func3 are same. using () is equivalent to not using it like this.
 
 // if we want to return objects, then enclode it in ()
-const func4=(a,b)=>({sum:a+b});
-console.log(func4(2,4));
+// const func4=(a,b)=>({sum:a+b});
+// console.log(func4(2,4));
+
+// let var1="global";
+// function test(){
+//     let var1="local";
+// }
+// console.log(var1);
+// test();
+// console.log(var1);
+
+// let var1="global";
+// function test(){
+//      var1="local";
+// }
+// console.log(var1);
+// test();
+// console.log(var1);
+
+// immediate invoked functon expression (IIFE)
+// to make any fxn to execute immediately after defining, enclose it with () and then call it on spot by writing ()
+// here u can give argument also, if needed as per the parameter while defining
+// while using IIFE ; is very imp to put in other statement also, otherwise ERROR.
+// use to create a local scope for variables from polluting the global scope.
+
+( function check(){
+    // this is named iife
+    console.log("hello user");
+}) ();
+
+
+// using arrow fxn also, below
+// this is unnamed iife
+( () =>(console.log("hello harshita"))) ();
+
+// passing argument and parameter
+( (name)=>(console.log(`${name} has just logged in`)))("Harshita Tripathi");
 
 

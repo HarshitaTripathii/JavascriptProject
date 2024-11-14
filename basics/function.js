@@ -157,6 +157,11 @@ const obj= {
 // }
 // func1();
 
+// const check=()=>{
+//     console.log("hell");
+// };
+// check();
+
 // implicit return is when we write in 1 line only, same as using () , told above
 // const func2=(n,m) => n+m+1
 // const func3=(n,m) => (n+m+1)
@@ -164,7 +169,7 @@ const obj= {
 // console.log(func3(2,4));
 // above, func2,func3 are same. using () is equivalent to not using it like this.
 
-// if we want to return objects, then enclode it in ()
+// if we want to return objects, then enclose it in ()
 // const func4=(a,b)=>({sum:a+b});
 // console.log(func4(2,4));
 
@@ -190,17 +195,18 @@ const obj= {
 // while using IIFE ; is very imp to put in other statement also, otherwise ERROR.
 // use to create a local scope for variables from polluting the global scope.
 
-( function check(){
-    // this is named iife
-    console.log("hello user");
-}) ();
+// ( function check(){
+//     // this is named iife
+//     console.log("hello user");
+// }) ();
 
 
 // using arrow fxn also, below
 // this is unnamed iife
-( () =>(console.log("hello harshita"))) ();
+// ( () =>(console.log("hello harshita"))) ();
 
 // passing argument and parameter
-( (name)=>(console.log(`${name} has just logged in`)))("Harshita Tripathi");
+// ( (name)=>(console.log(`${name} has just logged in`)))("Harshita Tripathi");
+
 
 

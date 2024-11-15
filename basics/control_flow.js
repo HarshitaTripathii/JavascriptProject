@@ -40,10 +40,10 @@ for (let i=0;i<5;i++)
     // console.log(i);
 }
 const arr=["yashi", "harshita"];
-for (let i=0; i<arr.length;i++)
-{
-    // console.log(arr[i]);
-}
+// for (let i=0; i<arr.length;i++)
+// {
+//     // console.log(arr[i]);
+// }
 // here instead of out of index error, undefined comes, which is also a problem
 let count=0;
 while(count<arr.length)
@@ -109,10 +109,51 @@ const a=[24,36,48,60];
 
 a.forEach( function(value)
 {
-    console.log(value);
+    // console.log(value);
 });
 
 // using this forEach fxn, we can directly access array element without using loops
+// while using forEach fxn, we write callback fxn as argument and that should be an unnamed callback fxn.
+// in above eg, we have defined the fxn there only but below, we will 1st define a fxn and then its reference as argument
+
+// foreach has 2 parameters : value, index, entire array.
+// a.forEach((val, ind, arr)=> console.log(val, ind, arr)); 
+// a.forEach((val, ind, arr)=> console.log(val, ind)); 
+// a.forEach((val)=> console.log(val, ind));  //it will show error
+
+// suppose we have an array of objects and we want to access any of its keys.
+
+// using for loops
+const arr1=[{
+    name1:"harshita",
+    age:21,
+},{
+    name1:"dhruv",
+    age:20,
+},{
+    name1:"harshit",
+    age:19,
+}];
+
+// for ( const items of arr1 )
+// {
+//    console.log(items.name1);
+// }
+// arr1.forEach((item)=>console.log(item.age));
+// above is using forEach fxn
+
+// in arrow fxn, if we want to return something : either use return keyword in {} or dont use return keyword in () 
+
+// filters in js is almost similar to filters in python.
+// filter in js : syntax : sequence.filter(function)
+
+const num=[10,20,30,40,50];
+const newN=num.filter((item)=> (item*item) );
+// const newN=num.filter((item)=> item*item );
+// both above will have same output
+// console.log(newN);
+
+
 
 
 

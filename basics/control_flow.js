@@ -29,6 +29,32 @@ let value="0";
 // if (value==0){
 //     console.log("false value");
 // }
-if (value==="0"){
-    console.log("true value");
+// if (value==="0"){
+//     console.log("true value");
+// }
+
+// ITERATIONS
+
+for (let i=0;i<5;i++)
+{
+    // console.log(i);
 }
+const arr=["yashi", "harshita"];
+for (let i=0; i<arr.length;i++)
+{
+    // console.log(arr[i]);
+}
+// here instead of out of index error, undefined comes, which is also a problem
+let count=0;
+while(count<arr.length)
+{
+    // console.log(`Name is ${arr[count]}`);
+    count++;
+}
+let score=0;
+
+do{
+    console.log(`score is ${score+1}`);
+    score++;
+}while(score<=3);
+

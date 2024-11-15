@@ -62,11 +62,11 @@ do{
 // of : strings , array
 // in : object
 
-const a=[10,20,30];
-for (const j of a)
-{
-    // console.log(j);
-}
+// const a=[10,20,30];
+// for (const j of a)
+// {
+//     // console.log(j);
+// }
 const myObj={
     "js": "javascript",
     "py": "python",
@@ -95,5 +95,25 @@ function mssg()
 {
    console.log("good bye");
 };
-greet("harshita", mssg);
+// greet("harshita", mssg);
+
+const a=[24,36,48,60];
+
+
+// console.log(a.lastIndexOf());
+// console.log(a.indexOf(48));
+// console.log(a.indexOf(45));
+// console.log(a.lastIndexOf());
+
+// indexOf fxn is similar to find fxn in python , as they both return -1 , if element not found.
+
+a.forEach( function(value)
+{
+    console.log(value);
+});
+
+// using this forEach fxn, we can directly access array element without using loops
+
+
+
 

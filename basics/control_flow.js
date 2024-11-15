@@ -54,7 +54,46 @@ while(count<arr.length)
 let score=0;
 
 do{
-    console.log(`score is ${score+1}`);
+    // console.log(`score is ${score+1}`);
     score++;
 }while(score<=3);
+
+// array Loops
+// of : strings , array
+// in : object
+
+const a=[10,20,30];
+for (const j of a)
+{
+    // console.log(j);
+}
+const myObj={
+    "js": "javascript",
+    "py": "python",
+    "cpp":"c ++",
+};
+for ( const keys in myObj)
+{
+    //  console.log(`${keys} ${myObj[keys]}`);
+   
+}
+
+// for in loop when used for array, it returns key i.e. index and in array keys/index are integers starting from 0
+for (const key in arr)
+{
+    // console.log(arr[key]);
+}
+
+// call back function : passed as an argument.
+function greet(name, func)
+{
+    console.log(`hello ${name}, good morning`);
+    func();
+
+};
+function mssg()
+{
+   console.log("good bye");
+};
+greet("harshita", mssg);
 

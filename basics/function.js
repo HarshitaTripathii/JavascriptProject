@@ -120,6 +120,8 @@ const obj= {
     console.log(this);
     }
 };
+// here when we print "this" it will return object, having welcom as key and value as "funtion : welcome" but when we write "welcome " function greet() {}" it will return ey and value as "funtion : greet"
+
 // obj.welcome();
 // obj.username="arya"
 // obj.welcome();

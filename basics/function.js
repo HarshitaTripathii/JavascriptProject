@@ -123,6 +123,11 @@ const obj= {
 // here when we print "this" it will return object, having welcom as key and value as "funtion : welcome" but when we write "welcome " function greet() {}" it will return ey and value as "funtion : greet"
 
 // obj.welcome();
+let a={...obj};
+let b=obj;
+b.username="rohan";
+a.username="riya";
+a.welcome();
 // obj.username="arya"
 // obj.welcome();
 // console.log(this);     //return empty object

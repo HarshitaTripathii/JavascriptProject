@@ -82,6 +82,7 @@ for ( const keys in myObj)
 for (const key in arr)
 {
     // console.log(arr[key]);
+    // console.log(key);
 }
 
 // call back function : passed as an argument.
@@ -148,10 +149,47 @@ const arr1=[{
 // filter in js : syntax : sequence.filter(function)
 
 const num=[10,20,30,40,50];
-const newN=num.filter((item)=> (item*item) );
+const newN=num.filter((item)=> (item>44) );
 // const newN=num.filter((item)=> item*item );
 // both above will have same output
 // console.log(newN);
+
+/*
+// map in python is similar to map in js
+//  seq.map(fxn) : this fxn is applied to each term of seq and returns new array
+const a1=num.map((item) => item +10)
+console.log(a1)
+*/
+
+ /*
+// Chainnig : using diffrenet methods together.
+const a2= num.map((item) => item*10 ).map((item) => item+1 ).filter( (item) => item>40)
+console.log(a2) */
+
+
+//  SHOPPING CART
+const shop=[ 
+    {
+        item : "js modoule",
+        price : 2999
+    },
+    {
+        item : " java modoule",
+        price : 5999
+    },
+    {
+        item : "c++ modoule",
+        price : 4999
+    },
+    {
+        item : "py modoule",
+        price : 5099
+    }
+]
+//  below both methods are correct
+// const totalShop= shop.reduce ( (acc,val) => acc+ val.price, 0)
+const totalShop= shop.reduce ( (acc,val) => acc+ val["price"], 0)
+console.log(totalShop)
 
 
 

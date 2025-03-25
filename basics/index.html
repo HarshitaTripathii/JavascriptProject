@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DOM-LEARNING</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        .bg-color {
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-color">
+   <div class="parents">
+    <div class="days">Monday</div>
+    <div class="days">Tuesday</div>
+    <div class="days">Wednesday</div>
+    <div class="days">Thursday</div>
+   </div>
+   <ul class="lang">
+    <li>javascript</li>
+
+   </ul>
+</body>
+<script>
+    const parent=document.querySelector('.parents');
+    /*
+    console.log(parent);
+    console.log(parent.children[0].innerHTML);
+    console.log(parent.children[0].textContent);
+    console.log(parent.children[0]);
+    for(let i=0;i<parent.children.length;i++)
+{
+    console.log(parent.children[i].innerHTML);
+}
+*/
+
+/*
+const div1=document.createElement("div");
+console.log(div1);
+div1.className="parents";
+div1.id="day1";
+div1.style.color="green";
+div1.innerText="hello Harshita using innertext\n"
+const textin=document.createTextNode("harshita using createTextNode")
+div1.appendChild(textin)
+div1.setAttribute("title","trial")
+document.body.appendChild(div1)
+*/
+
+
+// here, we have created a ul, and only 1 li, and another li : pytohn has been created using createElement
+/*
+const addition=document.querySelector('.lang')
+// console.log(addition)
+const sube=document.createElement('li')
+const textt=document.createTextNode("Python")
+sube.appendChild(textt)
+addition.appendChild(sube)
+document.body.appendChild(addition)
+*/
+
+function addlanguage(langName)
+{
+const addition=document.querySelector('.lang')
+const sube=document.createElement('li')
+const textt=document.createTextNode(langName)
+sube.appendChild(textt)
+addition.appendChild(sube)
+document.body.appendChild(addition)
+    
+}
+/*
+addlanguage("Python")
+addlanguage("CPP")
+addlanguage("MongoDb")
+*/
+
+function editListitem(i, langName)
+{
+    const ilang=document.querySelector(`li:nth-child(${i})`)
+    const newlang=document.createElement('li')
+    newlang.appendChild(document.createTextNode(langName))
+    ilang.replaceWith(newlang)
+}
+editListitem(1,"react")
+
+</script>
+
+</html>

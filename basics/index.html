@@ -76,11 +76,11 @@ addition.appendChild(sube)
 document.body.appendChild(addition)
     
 }
-/*
+// /*
 addlanguage("Python")
 addlanguage("CPP")
 addlanguage("MongoDb")
-*/
+// */
 
 function editListitem(i, langName)
 {
@@ -89,7 +89,24 @@ function editListitem(i, langName)
     newlang.appendChild(document.createTextNode(langName))
     ilang.replaceWith(newlang)
 }
-editListitem(1,"react")
+// editListitem(1,"react")
+
+function editUsingTextNode(i,langname)
+{
+    const lang=document.querySelector(`li:nth-child(${i})`)
+    lang.textContent=langname
+}
+// editUsingTextNode(1,"typescript")
+
+// removing any element
+function deleteElement(i)
+{
+    const lang=document.querySelector(`li:nth-child(${i})`)
+    lang.remove()
+}
+
+// deleteElement(3)
+
 
 </script>
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+    <style>
+        .outer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #result{
+            color: red;
+            font-size: 12px;
+            margin-top: 6px;
+        }
+        #conclusion{
+            color: rgb(138, 31, 31);
+            font-size: 18px;
+            margin-top: 4px;
+        }
+       
+
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <h1>BMI Calculator</h1>
+        <form >
+            <p><label>Enter Height</label><input type="text"  id="height"></p>
+            <p><label>Enter Weight</label><input type="text" id="Weight"></p>
+        
+        <button>CALCULATE</button>
+        <div id="result"></div>
+        <div id="conclusion"></div>
+    </form>
+    </div>
+
+</body>
+<script>
+    const form=document.querySelector('form')
+    form.addEventListener('submit', function(e)
+{
+    e.preventDefault()
+    const height=parseInt(document.querySelector('#height').value)
+    const weight=parseInt(document.querySelector('#Weight').value)
+    const result=document.querySelector('#result')
+    const con=document.querySelector('#conclusion')
+
+    if((height ==='' || height<0 || isNaN(height)) && (weight==='' || weight<0 || isNaN(weight)))
+{
+    result.innerHTML="Please enter valid height or weight"
+
+}
+else if(height ==='' || height<0 || isNaN(height))
+{
+    result.innerHTML="Please enter valid height"
+
+}
+else if( weight==='' || weight<0 || isNaN(weight))
+{
+    result.innerHTML="Please enter valid weight"
+}
+else{
+    const bmi=(weight/((height*height)/10000)).toFixed(2)
+    // result.appendChild(document.createTextNode(bmi))
+    result.innerHTML=`${bmi}`
+    if(bmi>25)
+{
+    con.innerHTML="Over Weight"
+}
+else if(bmi<19)
+{
+    con.innerHTML="Under Weight"
+}
+else{
+    con.innerHTML="Normal Range"
+}
+}
+
+} )
+</script>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Changer</title>
+    <style>
+.button{
+    height: 60px;
+    width: 60px;
+    border: 2px solid black;
+    margin: 5px 8px 5px 8px;
+}
+#buttons{
+    display: flex;
+    /* justify-content: center; */
+}
+.outer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+   
+}
+
+    </style>
+</head>
+<body>
+
+<div class="outer">
+    <h1>Color Scheme Switcher</h1>
+    <div id="buttons">
+    <span class="button" id="grey"  style="background-color:grey ;"></span>
+    <span class="button" id="blue" style="background-color:blue ;"></span>
+    <span class="button" id="white" style="background-color:white ;"></span>
+    <span class="button" id="yellow" style="background-color: yellow;"></span>
+</div>
+    <h2>Try to click on button , to change the colors of background </h2>
+</div>    
+
+</body>
+<script>
+    const allButton=document.querySelectorAll('.button')
+    const body=document.querySelector('body')
+
+    allButton.forEach(function(button){
+        button.addEventListener('click', function(e)
+    {
+        switch(e.target.id)
+        {
+            case "grey":
+                body.style.backgroundColor=e.target.id
+                break
+            case "yellow":
+                body.style.backgroundColor=e.target.id
+                break
+            case "white":
+                body.style.backgroundColor=e.target.id
+                break
+            case "blue":
+                body.style.backgroundColor=e.target.id
+                break
+            default:
+                break
+            }
+        })
+    })
+</script>
+<!-- NOTE : i have to still work on : on clicking on any of the box, something should appear on c
+ current box clicked, to notify which box we have clicked -->
+</html>

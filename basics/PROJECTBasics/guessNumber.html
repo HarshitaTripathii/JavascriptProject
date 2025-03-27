@@ -50,6 +50,7 @@
             height: 30px;
             background-color: rgb(33, 32, 31);
         }
+        
     </style>
 </head>
 
@@ -70,7 +71,7 @@
             <label class="design">
                 <h1>Guess the Number</h1>
             </label>
-            <input type="text" class="design" id="guess">
+            <input type="text" class="design" id="guess1">
             <input type="submit" id="submit" class="design">
         </form>
         <div class="results">
@@ -78,24 +79,25 @@
             <div class="guesses"></div>
             </p>
             <p>Remaining Guesses :
-            <div class="remain"></div>
+            <div class="remain">10</div>
             </p>
             <p>
-            <div class="LoweHi"></div>
+            <div class="LowerHi"></div>
             </p>
         </div>
     </div>
 
 </body>
 <script>
-    const randomNum = parseInt(Math.random() * 100 + 1)
-    const gues = document.querySelector('#guess')
+    let randomNum = parseInt(Math.random() * 100 + 1)
+    const gues = document.querySelector('#guess1')
     const sumit = document.querySelector('#submit')
     const remaining = document.querySelector('.remain')
     const prevgues = document.querySelector('.guesses')
     const startOver = document.querySelector('.results')
     const idea = document.querySelector('.LowerHi')
 
+    const p = document.createElement('p')
     let playVal = true
     let prevv = []
     let gusCount = 1
@@ -109,7 +111,7 @@
     }
 
     function validateNum(guess) {
-        if (isNan(guess) || guess > 100 || guess < 1) {
+        if (isNaN(guess) || guess > 100 || guess < 1) {
             displayMssg("Enter Valid Number to continue with Game")
         }
         else {
@@ -128,39 +130,55 @@
 
     }
     function checkNum(guess) {
-        if(guess===randomNum)
-    {
-        displayMssg("CORRECT")
-    }
-    else if (guess>randomNum)
-    {
-        displayMssg("too HIGH")
-    }
-    else{
-        displayMssg("too LOW")
-    }
+        if (guess === randomNum) {
+            displayMssg("CORRECT")
+            endGame()
+        }
+        else if (guess > randomNum) {
+            displayMssg("too HIGH")
+        }
+        else {
+            displayMssg("too LOW")
+        }
     }
 
     function displayGuess(guess) {
         // update remianing, prev, gues into empty ''
-        gues.value=''
+        gues.value = ''
         gusCount++
-        prevgues.innerHTML=prevgues.innerHTML+` ${guess}`
-        remaining.innerHTML=remaining.innerHTML+` ${11-gusCount}`
+        prevgues.innerHTML = prevgues.innerHTML + ` ${guess}`
+        remaining.innerHTML = ` ${11 - gusCount}`
 
     }
 
     function displayMssg(message) {
         // give hint : low or high or over and start again or invalid mssg
-        idea.innerHTML=message
+        idea.innerHTML = `${message}`
     }
 
     function endGame() {
         //
+        gues.value = ''
+        gues.setAttribute('disabled','')
+        p.classList.add('button')
+        p.innerHTML='<h2 id="newGame1">Start New Game </h2>'
+        startOver.appendChild(p)
+        playVal=false
+        newGame()
     }
 
     function newGame() {
-        //
+        const newgame=document.querySelector('#newGame1')
+        newgame.addEventListener('click', function(e){
+            prevv=[]
+            gusCount=1
+            prevgues.innerHTML=''
+            remaining.innerHTML=`${11-gusCount}`
+            gues.removeAttribute('disabled')
+            startOver.removeChild('p')
+            randomNum = parseInt(Math.random() * 100 + 1)
+            playVal=true
+        })
     }
 
 

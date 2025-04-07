@@ -13,6 +13,9 @@
         height: 40px;
         width: 40px;
      }
+     body{
+        background-color: rgb(69, 66, 66);
+     }
     </style>
 </head>
 <body>
@@ -28,13 +31,57 @@
             <div id="blue" class="divs" style="background-color:rgb(24, 166, 236) ;"></div>
         </li>
         <li>
-            <div id="green" class="divs" style="background-color: rgb(113, 180, 14);"></div>
+            <div id="green" class="divs" style="background-color: rgb(113, 180, 14);" ></div>
         </li>
     </ul>
 
 </body>
 <script>
-    document.getElementById("yellow").onclick(fin)
+   /*
+    document.getElementById("green").onclick=function(){
+        alert("this is green");
+    }
+   */
+
+ /*
+   document.querySelectorAll('.divs').forEach(function(div){
+    div.addEventListener('click',function(e){
+        switch(e.target.id)
+        {
+            case "pink":
+                alert("this is pink");
+                break;
+            case "yellow":
+                alert("this is yellow");
+                break;
+            case "blue":
+                alert("this is blue");
+                break;
+            case "green":
+                alert("this is green");
+                break;
+            default:
+                break;
+        }
+    })
+   })
+ */
+
+ document.getElementById('images').addEventListener('click',function()
+{
+    console.log("Clicked inside images id");
+},false)
+
+document.getElementById('green').addEventListener('click', function(e)
+{
+    console.log("Green has been clicked");
+    e.stopPropagation();
+},false)
+
+// event 
+// true : event capturing : outer to inner
+// false : event bubbling : inner to outer
+  
 
 </script>
 </html>

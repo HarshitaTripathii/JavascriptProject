@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #circle{
+            height: 40px;
+            width: 40px;
+            border: 2x solid black;
+            border-radius: 50%;
+            background-color: rgb(115, 115, 116);
+        }
+        #rect{
+            height: 70px;
+            width: 40px;
+            border: 2x solid black;
+            background-color: lightgrey;
+            z-index: 10;
+
+        }
+        #but{
+          
+        }
+
+    </style>
+</head>
+<body>
+    <div id="cblock">
+        <div id="circle"></div>
+        <div id="rect">
+          <div id="but"></div>
+        </div>
+    </div>
+    
+</body>
+<script>
+  const allcl=document.querySelectorAll("#cblock div");
+  const bod=document.querySelector('body');
+  allcl.forEach((cl)=>{
+    cl.addEventListener('click',(e)=>{
+      if(e.target.id=='circle')
+      {
+        bod.style.backgroundColor='yellow';
+        e.target.style.backgroundColor='orange';
+      }
+    })
+  })
+
+
+</script>
+</html>

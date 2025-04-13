@@ -9,24 +9,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
     <style>
-    
+
     </style>
 </head>
+
 <body>
     <h1>hello harshita</h1>
-    <button id="but">Click me</button>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
 </body>
 <script>
 
+    /*
+    // setTimeOut
     const mssgFunc=function()
     {
         document.querySelector('h1').innerHTML="good Morning";
         console.log("heya, whatsapp")
     }
     const timer=setTimeout(mssgFunc,3000)
-    document.querySelector('#but').addEventListener("click", function(){
+    document.querySelector('#stop').addEventListener("click", function(){
         clearTimeout(timer)
         console.log("Stopped")
     })
+    */
+
+    // setInterval
+    const greet = function (str, i) {
+        console.log(`${str} has just entered ${i} amount`, Date.now());
+    }
+    let contin;
+
+    document.querySelector("#start").addEventListener("click", function () {
+
+        if (!contin) {
+            contin = setInterval(greet, 2000, "Yashi", 10);
+
+        }
+    })
+    document.querySelector("#stop").addEventListener("click", function () {
+        clearInterval(contin)
+        contin = null;
+        console.log("Stopped")
+    })
 </script>
+
 </html>

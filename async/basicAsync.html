@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Events</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+    
+    </style>
+</head>
+<body>
+    <h1>hello harshita</h1>
+    <button id="but">Click me</button>
+</body>
+<script>
+
+    const mssgFunc=function()
+    {
+        document.querySelector('h1').innerHTML="good Morning";
+        console.log("heya, whatsapp")
+    }
+    const timer=setTimeout(mssgFunc,3000)
+    document.querySelector('#but').addEventListener("click", function(){
+        clearTimeout(timer)
+        console.log("Stopped")
+    })
+</script>
+</html>

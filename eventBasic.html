@@ -81,6 +81,22 @@ document.getElementById('green').addEventListener('click', function(e)
 // event 
 // true : event capturing : outer to inner
 // false : event bubbling : inner to outer
+
+// we want to delete the element we click
+document.querySelector('#images').addEventListener("click", function(e){
+    console.log(e.target.tagName);
+    if(e.target.tagName=='DIV')
+{
+    let remIt=e.target.parentNode;
+    remIt.remove();
+}
+})
+
+// either use remove method by accessing li : parent Node of div : child node, i.e. using child node, accessing parent node 
+// : METHOD USED is remove()
+
+// or use method by accesing li : child node and then accessing its parent node : ul and then using : 
+//  METHOD USED is removeChild()
   
 
 </script>

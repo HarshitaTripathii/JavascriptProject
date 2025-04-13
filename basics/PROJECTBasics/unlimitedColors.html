@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Events</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>hello harshita</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    // generating random color
+    const ranColor = function () {
+        const hex = "0123456789ABCDEF";
+        let ranc = "#";
+        for (let i = 0; i < 6; i++) {
+            ranc = ranc + hex[Math.floor(Math.random() * 16)];
+        }
+        return ranc;
+    }
+    let contin;
+    function changingColor() {
+        document.querySelector("body").style.backgroundColor = ranColor();
+    }
+    document.querySelector("#start").addEventListener("click", function () {
+        if (!contin) {
+            contin = setInterval(changingColor, 1000)
+        }
+    })
+
+    document.querySelector("#stop").addEventListener("click", function () {
+        clearInterval(contin)
+        contin = null
+
+    })
+    // const rc = ranColor();
+    // console.log(rc);
+
+</script>
+
+</html>

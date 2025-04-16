@@ -48,11 +48,17 @@ new Promise(function(resolve, reject){
     },1000)
     
     
-}).then(function(obj){
+})
+.then(function(obj){
     console.log(obj);
     return obj.age;
-}).then(function(AgeOfuser){
+})
+.then(function(AgeOfuser){
     console.log(`age is ${AgeOfuser}`);
-}).catch(function(err){
+})
+  .catch(function(err){
     console.log(err);
+})
+.finally(()=>{
+    console.log("All done and we are at finally stage ");
 })

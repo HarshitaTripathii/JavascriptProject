@@ -21,3 +21,12 @@ new Promise(function(resolve, reject){
 }).then(function(){
     console.log("then / resolve has been called ");
 })
+
+new Promise(function(resolve, reject){
+    setTimeout(function(){
+        console.log("resolve with parameter");
+        resolve({username:"Harshita", email:"harshita@yahoo.com"});
+    },1000)
+}).then(function(user){
+    console.log(user)
+})

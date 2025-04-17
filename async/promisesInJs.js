@@ -35,6 +35,8 @@ new Promise(function(resolve, reject){
 })
 */
 
+
+/*
 new Promise(function(resolve, reject){
     setTimeout(function(){
         let error=true;
@@ -46,8 +48,6 @@ new Promise(function(resolve, reject){
             reject("ERROR : something went wrong ");
         }
     },1000)
-    
-    
 })
 .then(function(obj){
     console.log(obj);
@@ -62,3 +62,30 @@ new Promise(function(resolve, reject){
 .finally(()=>{
     console.log("All done and we are at finally stage ");
 })
+*/
+
+const pFive=new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error =true;
+        if(!error)
+        {
+            resolve({name:"Arya", age:21});
+        }
+        else{
+            reject("ERROR : something went wrong ");
+        }
+    },1000);
+
+})
+async function consumepFive() {
+    try{
+        const resp= await pFive;
+        console.log(resp);
+    }
+    catch(e){
+        console.log(e);
+
+    }
+}
+consumepFive();
+// above, reject parameters are related/connceted with then and catch in async await 

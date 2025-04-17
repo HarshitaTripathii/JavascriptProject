@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Events</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+     .divs{
+        height: 40px;
+        width: 40px;
+     }
+     body{
+        background-color: rgb(69, 66, 66);
+     }
+    </style>
+</head>
+<body>
+    <h2>Amazing Images</h2>
+    <ul id="images">
+        <li>
+            <div id="pink" class="divs" style="background-color: rgb(237, 41, 204);"></div>
+        </li>
+        <li>
+            <div id="yellow" class="divs" style="background-color:yellow ;"></div>
+        </li>
+        <li>
+            <div id="blue" class="divs" style="background-color:rgb(24, 166, 236) ;"></div>
+        </li>
+        <li>
+            <div id="green" class="divs" style="background-color: rgb(113, 180, 14);" ></div>
+        </li>
+    </ul>
+
+</body>
+<script>
+   /*
+    document.getElementById("green").onclick=function(){
+        alert("this is green");
+    }
+   */
+
+ /*
+   document.querySelectorAll('.divs').forEach(function(div){
+    div.addEventListener('click',function(e){
+        switch(e.target.id)
+        {
+            case "pink":
+                alert("this is pink");
+                break;
+            case "yellow":
+                alert("this is yellow");
+                break;
+            case "blue":
+                alert("this is blue");
+                break;
+            case "green":
+                alert("this is green");
+                break;
+            default:
+                break;
+        }
+    })
+   })
+ */
+
+ document.getElementById('images').addEventListener('click',function()
+{
+    console.log("Clicked inside images id");
+},false)
+
+document.getElementById('green').addEventListener('click', function(e)
+{
+    console.log("Green has been clicked");
+    e.stopPropagation();
+},false)
+
+// event 
+// true : event capturing : outer to inner
+// false : event bubbling : inner to outer
+
+// we want to delete the element we click
+document.querySelector('#images').addEventListener("click", function(e){
+    console.log(e.target.tagName);
+    if(e.target.tagName=='DIV')
+{
+    let remIt=e.target.parentNode;
+    remIt.remove();
+}
+})
+
+// either use remove method by accessing li : parent Node of div : child node, i.e. using child node, accessing parent node 
+// : METHOD USED is remove()
+
+// or use method by accesing li : child node and then accessing its parent node : ul and then using : 
+//  METHOD USED is removeChild()
+  
+
+</script>
+</html>

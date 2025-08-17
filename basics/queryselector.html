@@ -26,7 +26,7 @@
     </div>
 
     <!-- // for understanding className, classList : toggle method in list/array -->
-    <div id="box" class="red big">yes, my color is getting changed</div>
+    <div id="box" class="red big">yes, my color is getting changed <h1>yuho</h1></div>
     <script>
 
         /*
@@ -38,6 +38,7 @@
         ele.forEach((e)=>{console.log(e.innerHTML)});
         */
 
+        /*
         const box= document.getElementById("box");
         // the below 2 methods .add and .toggle and others are like, .remove, .contains etc are for internal css, 
         // not for inline css
@@ -46,7 +47,26 @@
         console.log(box.classList)
 
         // for inline css
-        
+        box.style.backgroundColor="pink";
+        // box.children is HTMLCollection 
+        for(let e of box.children)
+        {
+        e.style.color="green";
+        }
+    
+        // box.children.style.color="green"; // this is wrong, as children is not single element
+        box.parentElement.style.backgroundColor="yellow";
+
+        console.log(box.parentElement)
+        // console.log(box.children)
+
+        // we can set any other attribute also, just like we  have className or classList
+        box.setAttribute("arial", "type");
+
+        // to remove whole element
+        box.remove();
+        */
+
     </script>
 </body>
 </html>

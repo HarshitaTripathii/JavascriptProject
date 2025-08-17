@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    .blue{
+        color:blue
+    }
+    .underline{
+        text-decoration: underline;
+    }
+</style>
 </head>
 <body>
     <div class="block">Hello World</div>
@@ -17,13 +25,28 @@
         <div class="block"><p>Lorem ipsum dolor sit.</p></div>
     </div>
 
+    <!-- // for understanding className, classList : toggle method in list/array -->
+    <div id="box" class="red big">yes, my color is getting changed</div>
     <script>
+
+        /*
         const ele = document.querySelectorAll(".block");
         const body= document.querySelector("body")
         const div= document.querySelector("div");
         const arr= [body, div];
         arr.forEach((el)=>{console.log(el.innerHTML)});
         ele.forEach((e)=>{console.log(e.innerHTML)});
+        */
+
+        const box= document.getElementById("box");
+        // the below 2 methods .add and .toggle and others are like, .remove, .contains etc are for internal css, 
+        // not for inline css
+        box.classList.add("blue");
+        box.classList.toggle("underline");
+        console.log(box.classList)
+
+        // for inline css
+        
     </script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="block">Hello World</div>
+    <div class="block"><h1>Hello World</h1></div>
+    <div class="block">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet.</p>
+        <p><pre>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</pre></p>
+    </div>
+    <div class="block">
+        <h2>Harshita</h2>
+        <div class="block"><p>Lorem ipsum dolor sit.</p></div>
+    </div>
+
+    <script>
+        const ele = document.querySelectorAll(".block");
+        const body= document.querySelector("body")
+        const div= document.querySelector("div");
+        const arr= [body, div];
+        arr.forEach((el)=>{console.log(el.innerHTML)});
+        ele.forEach((e)=>{console.log(e.innerHTML)});
+    </script>
+</body>
+</html>

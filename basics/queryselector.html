@@ -14,9 +14,9 @@
 </style>
 </head>
 <body>
-    <div class="block">Hello World</div>
+    <div class="block remo">Hello World</div>
     <div class="block"><h1>Hello World</h1></div>
-    <div class="block">
+    <div class="block remo">
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet.</p>
         <p><pre>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</pre></p>
     </div>
@@ -66,6 +66,20 @@
         // to remove whole element
         box.remove();
         */
+        
+        const elements= document.getElementsByClassName("block");
+        console.log(elements);
+        for(let i=0;i<elements.length; i++)
+    {
+        console.log(elements.item(i))
+    }
+
+    // to make all class remo as purple colored text
+    const remo=document.getElementsByClassName("remo");
+    for(let e of remo){
+        e.style.color="purple";
+    }
+
 
     </script>
 </body>

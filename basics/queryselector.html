@@ -30,7 +30,11 @@
     <!-- // for understanding className, classList : toggle method in list/array -->
     <div id="box" class="red big block">yes, my color is getting changed <h1>yuho</h1></div>
     <!-- <button onclick="console.log('somebody clicked')">Click Me</button>   // method 1 of adding event  -->
-    <button onclick="handleClick()">Click Me</button>   // method 2 of adding event 
+    <button onclick="handleClick()">Click Me</button>    
+    <!-- // method 2 of adding event  -->
+     <div id="container"></div>
+     <button class="new">change</button>
+
     <script>
 
         /*
@@ -116,6 +120,7 @@
     })
     */
 
+    /*
     // click on any element let say .block and remove it
     const block= document.querySelector("body").children;
     console.log(block);
@@ -123,10 +128,19 @@
         // console.log(e)
         e.addEventListener("click", ()=>{
             e.remove();
-
         })
-
     }
+    */
+
+    const button=document.querySelector(".new");
+    const element=document.getElementById("container");
+    button.addEventListener("click", ()=>{
+        const el=document.createElement("h1");
+        el.innerText="Soni";
+        // element.innerHTML=el; //wrong : innerHTML expects a string, not a DOM element.
+        element.appendChild(el); 
+        //appendChild expects a Node/Element, not a string.
+    })
 
     
     </script>

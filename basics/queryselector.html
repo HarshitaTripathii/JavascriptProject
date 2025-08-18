@@ -8,6 +8,8 @@
     .blue{
         color:blue
     }
+    .red{
+        color: red;    }
     .underline{
         text-decoration: underline;
     }
@@ -15,7 +17,7 @@
 </head>
 <body>
     <div class="block remo">Hello World</div>
-    <div class="block"><h1>Hello World</h1></div>
+    <div class="block"><h1>Hello another World</h1></div>
     <div class="block remo">
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet.</p>
         <p><pre>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</pre></p>
@@ -26,7 +28,9 @@
     </div>
 
     <!-- // for understanding className, classList : toggle method in list/array -->
-    <div id="box" class="red big">yes, my color is getting changed <h1>yuho</h1></div>
+    <div id="box" class="red big block">yes, my color is getting changed <h1>yuho</h1></div>
+    <!-- <button onclick="console.log('somebody clicked')">Click Me</button>   // method 1 of adding event  -->
+    <button onclick="handleClick()">Click Me</button>   // method 2 of adding event 
     <script>
 
         /*
@@ -66,7 +70,8 @@
         // to remove whole element
         box.remove();
         */
-        
+
+        /*
         const elements= document.getElementsByClassName("block");
         console.log(elements);
         for(let i=0;i<elements.length; i++)
@@ -79,8 +84,51 @@
     for(let e of remo){
         e.style.color="purple";
     }
+    */
+
+    // addEventListener : multiple way to perform any action, on happening of any event 
+    // 2. onClick attribute : onClick = "function()"
+    function handleClick(){
+        console.log("clicked bhai")
+    }
 
 
+    /*
+    // 3. select ele by id, then el.onclick = function() to be performed
+     const button= document.querySelector("button");
+     button.onclick= function(){
+        console.log("ha bhai clicked");
+     }
+
+     // but the best method is addEventListener(eventname, callBackFnc
+     button.addEventListener("click", ()=>{
+        console.log("ji hn clicked")
+     })
+     // or
+     button.addEventListener("click", handleClick);
+    */
+     
+    /*
+    // click on button, toggle b/w red and blue color of button
+    const button=document.querySelector("button")
+    button.addEventListener("click", ()=>{
+     button.className=(button.classList.contains("blue") ? "red" : "blue")
+    })
+    */
+
+    // click on any element let say .block and remove it
+    const block= document.querySelector("body").children;
+    console.log(block);
+    for(let e of block){
+        // console.log(e)
+        e.addEventListener("click", ()=>{
+            e.remove();
+
+        })
+
+    }
+
+    
     </script>
 </body>
 </html>

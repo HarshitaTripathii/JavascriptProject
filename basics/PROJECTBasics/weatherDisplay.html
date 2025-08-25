@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Display</title>
+</head>
+
+<body>
+    <!-- we need to display local time, tempaerature and region with city name -->
+    <Label>Enter City</Label>
+    <input id="city-input" type="text" placeholder="Enter City Name">
+    <button id="button-name">Search</button>
+    <div class="display" style="display: flex; flex-direction: column;"></div>
+    <script>
+
+        // select all required elements
+        const button = document.querySelector("#button-name");
+        const city = document.querySelector("#city-input");
+        const div = document.querySelector(".display");
+        const region = document.createElement("h1");
+        const localt = document.createElement("p");
+        const temp = document.createElement("p")
+
+        // create async fcn to get the json data from api call
+        async function getData(locat) {
+            const data = await fetch(`https://api.weatherapi.com/v1/current.json?key=b33ca8b9e6cb40bfb18164515252408&q=${locat}&aqi=yes`);
+            const result = await data.json();
+            console.log(result);
+            return await result;
+        }
+        // on clicking on button, following searching and display has to be done
+        button.addEventListener("click", async () => {
+            const cityname = await getData(city.value);
+            region.innerText = `${cityname.location.name} ${cityname.location.region}`;
+            localt.innerText = `${cityname.location.localtime}`;
+            temp.innerText = `${cityname.current.temp_c}`;
+            div.innerHTML="";
+            div.append(region, localt, temp);
+        })
+
+    </script>
+
+
+</body>
+
+</html>

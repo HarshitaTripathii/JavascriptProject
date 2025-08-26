@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My name is <p id="nameDisplay">Harshita</p></h1>
+    <p>Lorem ipsum dolor sit amet.
+    </p>
+    <label>Enter Name</label>
+    <input type="text" placeholder="Enter name" id="input-name">
+    <button id="button">Enter</button>
+
+    <script>
+        // entering name and getting it displayed in real time and storing it on LocalStorage
+        const nameD=document.querySelector("#nameDisplay");
+        const input=document.querySelector("#input-name");
+        const button=document.querySelector("#button");
+        button.addEventListener("click", ()=>{
+            localStorage.setItem("name", input.value);
+            // nameD.innerHTML=localStorage.getItem("name"); // instead of doing this,see next line
+            location.reload();
+        })
+        window.addEventListener("load", ()=>{
+            nameD.innerHTML=localStorage.getItem("name");
+        })
+    </script>
+</body>
+</html>

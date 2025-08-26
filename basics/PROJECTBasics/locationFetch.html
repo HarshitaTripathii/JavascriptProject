@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>my current Location is below</h1>
+    <button id="button">Search</button>
+
+    <script>
+        const button=document.querySelector("#button");
+        function gotLocation(p)
+        {
+            console.log(p);
+        }
+        function failedLocation(){
+            console.log("sorry, unable to process Location")
+        }
+        button.addEventListener("click", async ()=>{
+            // below has 2 callbacks 1st : for success and 2nd : failure
+            navigator.geolocation.getCurrentPosition(gotLocation,failedLocation )
+        })
+    </script>
+</body>
+</html>

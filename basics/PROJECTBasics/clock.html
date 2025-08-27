@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <style>
+        .blue {
+            background-color: blue;
+            color: white;
+
+        }
+
+        .red {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div
+        style="display: flex; flex-direction: column; justify-content: center; align-items: center; height:100vh width:100vw">
+        <h1 id="display"></h1>
+        <button id="button" class="blue">Start</button>
+    </div>
+
+
+    <script>
+        const display = document.querySelector("#display");
+        const button = document.querySelector("#button");
+        let changeTime;
+
+
+        // default display: always
+        // const cTime = new Date();
+        // const content = `${cTime.getHours()}:${cTime.getMinutes()}:${cTime.getSeconds()}`;
+        // display.innerText = content;
+
+        function showTime() {
+            const cTime = new Date();
+            const content = `${cTime.getHours()}:${cTime.getMinutes()}:${cTime.getSeconds()}`;
+
+            display.innerText = content;
+        }
+        showTime();
+
+
+        button.addEventListener("click", () => {
+            // button.innerText=button.innerText.trim().toLowerCase()==="start" ? "Stop" : "Start";
+            // button.innerText = button.innerText === "Start" ? "Stop" : "Start";
+            button.className = (button.classList.contains("blue") ? "red" : "blue");
+            if (button.innerText === "Start") {
+                button.innerText = "Stop";
+                // button.classList.toggle("red");
+                changeTime = setInterval(showTime, 1000);
+
+            }
+            else {
+                button.innerText = "Start";
+                button.classList.toggle("green");
+
+                clearInterval(changeTime);
+
+            }
+
+
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>

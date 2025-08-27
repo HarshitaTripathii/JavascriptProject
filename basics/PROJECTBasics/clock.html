@@ -21,8 +21,12 @@
 
 <body>
     <div
-        style="display: flex; flex-direction: column; justify-content: center; align-items: center; height:100vh width:100vw">
+        style="display: flex; flex-direction: column; justify-content: center; align-items: center; ">
         <h1 id="display"></h1>
+
+        <div ><Label>Enter Timer : </Label><input type="number" placeholder="in seconds"
+                id="timer-input"><button class="red enter">Enter</button></div>
+                <div class="mid" style="display: flex; flex-direction: column; justify-content: center; align-items: center; " ></div>
         <button id="button" class="blue">Start</button>
     </div>
 
@@ -30,23 +34,52 @@
     <script>
         const display = document.querySelector("#display");
         const button = document.querySelector("#button");
-        let changeTime;
-
-
-        // default display: always
-        // const cTime = new Date();
-        // const content = `${cTime.getHours()}:${cTime.getMinutes()}:${cTime.getSeconds()}`;
-        // display.innerText = content;
+        const timerInp = document.querySelector("#timer-input");
+        const midDiv = document.querySelector(".mid");
+        const enterButton = document.querySelector(".enter");
+        const newbutton = document.createElement("button");
+        newbutton.innerText="Back";
+        const ele = document.createElement("h1");
+        ele.innerText = "Time Up";
 
         function showTime() {
             const cTime = new Date();
             const content = `${cTime.getHours()}:${cTime.getMinutes()}:${cTime.getSeconds()}`;
-
             display.innerText = content;
         }
         showTime();
 
+        enterButton.addEventListener("click", () => {
+            const val = timerInp.value;
+            let tempTime;
+            let stoppage = 0;
+            // enterButton.setAttribute("disabled", '');
+             enterButton.style.display="none";
 
+            tempTime = setInterval(() => {
+                stoppage++;
+                showTime();
+                if (stoppage > val) {
+                    clearInterval(tempTime);
+                    midDiv.append(ele, newbutton);
+
+                }
+
+            }, 1000);
+        })
+        newbutton.addEventListener("click",()=>{
+            // enterButton.removeAttribute("disab");
+            enterButton.style.display="";
+            timerInp.value="";
+            midDiv.removeChild(ele);
+            midDiv.removeChild(newbutton);
+
+        })
+        let changeTime;
+        // default display: always
+        // const cTime = new Date();
+        // const content = `${cTime.getHours()}:${cTime.getMinutes()}:${cTime.getSeconds()}`;
+        // display.innerText = content;
         button.addEventListener("click", () => {
             // button.innerText=button.innerText.trim().toLowerCase()==="start" ? "Stop" : "Start";
             // button.innerText = button.innerText === "Start" ? "Stop" : "Start";
@@ -55,14 +88,11 @@
                 button.innerText = "Stop";
                 // button.classList.toggle("red");
                 changeTime = setInterval(showTime, 1000);
-
             }
             else {
                 button.innerText = "Start";
-                button.classList.toggle("green");
-
+                // button.classList.toggle("green");
                 clearInterval(changeTime);
-
             }
 
 

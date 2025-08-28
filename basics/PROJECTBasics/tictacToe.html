@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            font-size: larger;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .column {
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;" class="container">
+        <div style="display: flex; justify-content: center; align-items: center;" class="container">
+            <div class="row">
+                <div onclick="handleClick(this)" class="column" id="0"></div>
+                <div onclick="handleClick(this)" class="column" id="1"></div>
+                <div onclick="handleClick(this)" class="column" id="2"></div>
+            </div>
+            <div class="row">
+                <div onclick="handleClick(this)" class="column" id="3"></div>
+                <div onclick="handleClick(this)" class="column" id="4"></div>
+                <div onclick="handleClick(this)" class="column" id="5"></div>
+            </div>
+            <div class="row">
+                <div onclick="handleClick(this)" class="column" id="6"></div>
+                <div onclick="handleClick(this)" class="column" id="7"></div>
+                <div onclick="handleClick(this)" class="column" id="8"></div>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <script>
+        let val = "X";
+        let array = Array(9).fill(null);
+        const cont = document.querySelector(".container");
+        const newEl = document.createElement("h1");
+        const button = document.createElement("Button");
+        const col = document.querySelectorAll(".column");
+        function checkWinner(ele) {
+            if (array.filter(it => it == null).length == 0) {
+                newEl.innerText = "Tie";
+                button.innerText = "Back";
+                cont.append(newEl, button);
+            }
+            else {
+                let res = [];
+                if (array.filter(item => item === val).length == 3) {
+                    array.forEach((i, ind) => {
+                        if (i === val) {
+                            res.push(ind);
+                        }
+                    })
+                }
+                if (res[2] - res[1] == res[1] - res[0]) {
+                    newEl.innerText = (val === "X" ? `Blue Won ! ${val}` : `Red Won ! ${val}`);
+                    button.innerText = "Back";
+                    cont.append(newEl, button);
+                    // col.removeAttribute("onclick");
+                    col.forEach(element => {
+                        element.removeAttribute("onclick");
+                    });
+                }
+            }
+        }
+        button.addEventListener("click", () => {
+            window.location.reload();
+        })
+
+        function handleClick(el) {
+            array[el.id] = val;
+            el.classList.add((val === "X") ? "blue" : "red");
+            el.innerText = val;
+            checkWinner(el);
+            val = (val === "X") ? "O" : "X";
+            el.onClick = "null";// this will not work
+            el.removeAttribute("onclick");
+        }
+    </script>
+
+</body>
+
+</html>

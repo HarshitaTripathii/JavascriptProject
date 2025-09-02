@@ -59,22 +59,13 @@
         const newEl = document.createElement("h1");
         const button = document.createElement("Button");
         const col = document.querySelectorAll(".column");
+        const winnerList = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8]]
         function checkWinner(ele) {
-            if (array.filter(it => it == null).length == 0) {
-                newEl.innerText = "Tie";
-                button.innerText = "Back";
-                cont.append(newEl, button);
-            }
-            else {
-                let res = [];
-                if (array.filter(item => item === val).length == 3) {
-                    array.forEach((i, ind) => {
-                        if (i === val) {
-                            res.push(ind);
-                        }
-                    })
-                }
-                if (res[2] - res[1] == res[1] - res[0]) {
+            for (list in winnerList) {
+                const [a, b, c] = list;
+                if (array[a] && array[a] === array[b] && array[a] === array[c]) {
                     newEl.innerText = (val === "X" ? `Blue Won ! ${val}` : `Red Won ! ${val}`);
                     button.innerText = "Back";
                     cont.append(newEl, button);
@@ -82,9 +73,13 @@
                     col.forEach(element => {
                         element.removeAttribute("onclick");
                     });
+
                 }
             }
+
+
         }
+
         button.addEventListener("click", () => {
             window.location.reload();
         })
@@ -95,8 +90,17 @@
             el.innerText = val;
             checkWinner(el);
             val = (val === "X") ? "O" : "X";
-            el.onClick = "null";// this will not work
+            // el.onClick = "null";  // this will not work
             el.removeAttribute("onclick");
+            if (array.filter(e => e === null).length == 0) {
+                newEl.innerText = "Tie Up";
+                button.innerText = "Back";
+                cont.append(newEl, button);
+                col.forEach(element => {
+                    element.removeAttribute("onclick");
+                });
+
+            }
         }
     </script>
 

@@ -1,0 +1,94 @@
+promise.then(callback);  means
+
+Internally it's approximately:
+
+when promise finishes:
+    result = callback(value)
+
+    if result is a Promise:
+        wait for it
+
+    otherwise:
+        continue immediately
+
+This is the whole secret.
+
+###############################################
+
+Promise.resolve(1)
+.then((x) => {
+    return Promise.resolve(x + 1);
+})
+.then(console.log);
+
+
+in above example
+
+Promise.resolve(1)
+
+creates an already-resolved Promise.
+
+Equivalent to:
+
+new Promise((resolve) => {
+    resolve(1);
+});
+
+So we now have:
+
+Promise { fulfilled: 1 }
+
+and 
+
+.then(console.log);
+
+is just shorthand for:
+
+.then((value) => {
+    console.log(value);
+});
+
+##########################################
+
+.then(() => {
+    getData(2);
+})
+
+here callback returns nothing menas Undefined 
+
+.then() ALWAYS returns a Promise.
+
+const p = Promise.resolve(1);
+
+const p2 = p.then(() => {
+    getData(2);
+});
+
+So in this example p is equal to promise.resolve(1).
+We are creating the promise in JavaScript and resolving it with a promise result as 1. Promise.resolve will return a promise so p is also a promise and p2 is also a promise but p2 will occur only when p will get resolved since it gets resolved immediately. 
+So p.then() will also return a promise 
+Inside the then function the callback does not return anything. It means that it is returning "undefined"
+
+
+So callback returned undefined, hence JavaScript will create a promise p2 as promise.resolve(undefined) 
+i.e
+const p2 = Promise.resolve(undefined);
+
+#############################
+
+getdata(1)
+.then(() => {
+    console.log("fetching data 2");
+    getdata(2);
+})
+.then(() => {
+    console.log("done now");
+});
+
+OUTPUT:
+data 1
+fetching data 2
+done now
+data 2
+
+"The next step in this chain depends on getdata(2) finishing."

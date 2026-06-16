@@ -4,7 +4,7 @@
 // will not run because getData(null) rejects the promise. 
 // Once a promise in the chain rejects,
 //  JavaScript skips all remaining .then() blocks and jumps directly to .catch().
-
+// the Promise is providing a way to notify other code when the async operation finishes, using .then() and catch (0)
 
 
 
@@ -20,9 +20,6 @@ function getData(dataId) {
             else{
                 reject("Error occured");
             }
-            
-
-
         }, 3000);
 
 
@@ -30,15 +27,16 @@ function getData(dataId) {
 };
 
 getData(1)
-.then(()=>{
+.then((res)=>{
+    console.log("it is a ",res);
     return getData(2);
 })
 .then(()=>{
-    return getData(4);
+    return getData(3);
 
 })
 .then(()=>{
-    return getData(3);
+    return getData(null);
 })
 .then(()=>{
      console.log("Sucessfully executed");

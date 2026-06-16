@@ -1,0 +1,84 @@
+when we write 
+await api(2);    it means
+
+
+api(2).then((value) => {
+    // continue executing the code after await
+});
+
+The code after await is what effectively goes inside that .then().
+
+example
+async function getData() {
+    console.log("A");
+
+    await api(2);
+
+    console.log("B");
+}
+
+JavaScript roughly transforms it to:
+
+function getData() {
+    console.log("A");
+
+    return api(2).then((value) => {
+        console.log("B");
+    });
+}
+
+
+##############################
+async function getData() {
+    const res = await api(2);
+
+    console.log(res);
+
+    console.log("Done");
+}
+
+actually :
+
+function getData() {
+    return api(2).then((res) => {
+        console.log(res);
+
+        console.log("Done");
+    });
+}
+
+################################################
+async function getData() {
+    await api(1);
+    await api(2);
+    await api(3);
+}
+
+actually:
+
+function getData(){
+    return api(1);
+    .then(()=>{
+        return api(2);
+    })
+    .then(()=>{
+        return api(3);
+    })
+}
+
+
+##########################################
+
+when we write 
+
+await api(null);
+
+actually:
+
+api(null)
+.then(()=>{
+    // continue;
+})
+.catch((err)=>{
+    throw err;
+})
